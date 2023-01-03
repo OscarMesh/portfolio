@@ -3,6 +3,7 @@ import About from "./components/About";
 import Experience from "./components/Experience";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import Skills from "./components/Skills";
 function App() {
   return (
     <div className="App bg-[rgb(41,41,41)] text-white h-screen snap-y snap-mandatory overflow-scroll z-0">
@@ -17,10 +18,16 @@ function App() {
       <section id="about" className="snap-center">
         <About />
       </section>
-      {/* Experience section */}
+
       <section id="experience" className="snap-center">
         <Experience />
       </section>
+
+      {/* skills */}
+      <section id="skills" className="snap-center">
+        <Skills />
+      </section>
+
       {/* Projects */}
 
       {/* Gitub projects */}

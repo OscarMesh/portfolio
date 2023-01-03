@@ -59,7 +59,7 @@ const ExperienceCard = () => {
         </div>
       </div>
       <p className="uppercase py-1 text-gray-300">Started work... -Ended...</p>
-      <ul className="list-disc space-y-4 ml-5 text-lg w-[350px] md:w-auto px-5 overflow-y-scroll md:overflow-hidden">
+      <ul className="list-disc space-y-2 ml-3 text-[18px] md:text-lg w-[300px] md:w-auto px-5 overflow-y-scroll md:overflow-hidden">
         <li>summary points summary points summary points summary</li>
         <li>summary points summary points summary points summary</li>
         <li>summary points summary points summary points summary</li>

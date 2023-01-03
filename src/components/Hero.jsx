@@ -4,7 +4,12 @@ import BackgroundCircles from "./BackgroundCircles";
 
 const Hero = () => {
   const [text, count] = useTypewriter({
-    words: ["Hi there, I'm Oscar", "Guy-who-loves-movies", "<ButLovesToCode/>"],
+    words: [
+      "Hi there!",
+      "I'm Oscar",
+      "Guy-who-loves-movies",
+      "<ButLovesToCode/>",
+    ],
     loop: true,
     delaySpeed: 2000,
   });
@@ -21,10 +26,10 @@ const Hero = () => {
         alt=""
       />
       <div className="z-20">
-        <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">
+        <h2 className="text-[12px] md:text-sm uppercase text-gray-500 pb-2 tracking-[10px] md:tracking-[15px]">
           Software Engineer
         </h2>
-        <h1 className="text-5xl lg:text-6xl font-semibold scroll-px-10 ">
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold scroll-px-10 ">
           <span className="mr-3">{text}</span>
           <Cursor cursorColor="#898989" />
         </h1>
