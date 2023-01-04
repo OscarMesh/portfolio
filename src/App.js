@@ -1,5 +1,6 @@
 import "./App.css";
 import About from "./components/About";
+import ContactMe from "./components/ContactMe";
 import Experience from "./components/Experience";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
@@ -31,10 +32,11 @@ function App() {
       <section id="projects" className="snap-center">
         <Projects />
       </section>
-
-      {/* Gitub projects */}
-
       {/* Contact */}
+
+      <section id="contact" className="snap-start">
+        <ContactMe />
+      </section>
     </div>
   );
 }
