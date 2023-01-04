@@ -1,14 +1,68 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Projects = () => {
+  const projects = [1, 2, 3, 4, 5];
   return (
     <div className="h-screen relative flex overflow-hidden flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0">
       <h3 className="absolute top-20 text-center uppercase tracking-[20px]  text-gray-500 text-2xl">
         Projects
       </h3>
+
+      <div
+        className="relative w-full flex overflow-hidden overflow-y-hidden snap-x
+      snap-mandatory z-10"
+      >
+        {projects.map((project, i) => {
+          return (
+            <div
+              className="w-screen mt-10 flex-shrink-0 snap-center flex flex-col space-y-5
+            items-center justify-center p-10 md:p-33 h-screen"
+            >
+              <motion.img
+                initial={{
+                  opacity: 0,
+                  y: -300,
+                }}
+                transition={{
+                  duration: 1.2,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                viewport={{
+                  once: true,
+                }}
+                src="https://drive.google.com/uc?id=1K8ryHqQHyccENdgl_VCSCtX1Y4g_2Gfp"
+                alt=""
+                className="w-56 h-56 object-cover md:w-60 md:h-60 xl:w-80 xl:h-80"
+              />
+              <div className="space-y-3 px-0 md:px-5 max-w-6xl">
+                <h4 className="text-2xl font-semibold text-center">
+                  <span className="underline decoration-[#898989]">
+                    Case Study {i + 1} of {projects.length}:
+                  </span>{" "}
+                  Tiquette
+                </h4>
+                <p className="text-base text-center md:text-left">
+                  Tiquette is a web application that allows you to create
+                  tickets, assign them to users, and track their progress. It
+                  was created using React and Node.js, and it uses MongoDB as a
+                  database.
+                </p>
+              </div>
+            </div>
+          );
+        })}
+        {/* projects */}
+        {/* projects */}
+        {/* projects */}
+      </div>
       <div className="w-full absolute top-[30] bg-[#898989]/10 left-0 h-[400px] -skew-y-12 "></div>
     </div>
   );
 };
 
 export default Projects;
+// https://drive.google.com/file/d/1K8ryHqQHyccENdgl_VCSCtX1Y4g_2Gfp/view?usp=sharing
