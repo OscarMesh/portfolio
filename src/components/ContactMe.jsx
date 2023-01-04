@@ -42,13 +42,13 @@ const ContactMe = () => {
           onSubmit={handleSubmit((data) => {
             window.location.href = `mailto:okerekeifeanyi65@gmail.com?subject=${data.subject}&body=Hi, my name is ${data.name}. ${data.Message}(${data.email})`;
           })}
-          className="flex flex-col space-y-1 md:space-y-2  w-fit mx-auto"
+          className="flex flex-col space-y-1 md:space-y-2 w-[380px]  md:w-fit mx-auto"
         >
-          <div className="flex space-x-1 md:space-x-2 ">
+          <div className="flex space-x-1 md:space-x-2">
             <input
               {...register("name")}
               placeholder="Name"
-              className="contactInput"
+              className="contactInput w-[160px] md:w-auto"
               type="text"
             />
             <input
