@@ -22,7 +22,7 @@ const ExperienceCard = ({ experience }) => {
         viewport={{
           once: true,
         }}
-        classname="max-w-30 max-h-30 rounded-full object-cover  xl:w-[200px] xl:h-[200px] object-center"
+        className="w-30 h-30 rounded-full object-cover  xl:w-[200px] xl:h-[200px] object-center"
         src={experience.companyImage.asset.url}
       />
       <div className="px-0 md:px-10">
@@ -58,7 +58,7 @@ const ExperienceCard = ({ experience }) => {
           : new Date(experience.dateEnded).toDateString()}
       </p>
       <ul
-        className="list-disc space-y-2 ml-3 text-[18px] md:text-lg w-[300px] md:w-auto px-5 overflow-y-scroll md:overflow-hidden  
+        className="list-disc space-y-2 ml-3 text-[14px] md:text-lg w-[300px] md:w-auto px-5 overflow-y-scroll md:overflow-hidden  
       scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#898989]/80 "
       >
         {experience.points.map((point, i) => (

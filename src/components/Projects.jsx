@@ -40,7 +40,7 @@ const Projects = () => {
       </h3>
 
       <div
-        className="relative w-full flex overflow-hidden overflow-y-hidden snap-x
+        className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x
       snap-mandatory z-10"
       >
         {projects.map((project, i) => {
