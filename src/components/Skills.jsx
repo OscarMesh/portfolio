@@ -1,7 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Skill from "./Skill";
+import sanityClient from "../client.js";
+
 const Skills = () => {
+  const [directionLeft, setDirectionLeft] = useState(true);
+  const [skills, setSkills] = useState([]);
+
+  useEffect(() => {
+    sanityClient
+      .fetch(
+        ` *[_type == "skill"]{
+        progress,
+          _id,
+          image{
+          asset -> {
+            url,
+            _id
+          }
+          }
+      }
+      `
+      )
+      .then((data) => setSkills(data))
+      .catch(console.error);
+  }, [sanityClient, setSkills]);
+
   return (
     <motion.div
       initial={{
@@ -24,22 +48,12 @@ const Skills = () => {
         Hover over a skill for current profieciency
       </h3>
       <div className="grid grid-cols-4 gap-5 mt-14 md:mt-36 xl:mt-56 ">
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
+        {skills?.slice(0, skills.length / 2).map((skill) => (
+          <Skill key={skill._id} skill={skill} />
+        ))}
+        {skills?.slice(skills.length / 2, skills.length).map((skill) => (
+          <Skill key={skill._id} skill={skill} directionLeft={directionLeft} />
+        ))}
       </div>
     </motion.div>
   );
