@@ -22,7 +22,7 @@ const ExperienceCard = ({ experience }) => {
         viewport={{
           once: true,
         }}
-        className="w-30 h-30 rounded-full object-cover  xl:w-[200px] xl:h-[200px] object-center"
+        className="w-32 h-32 rounded-full object-cover  xl:w-[200px] xl:h-[200px] object-center"
         src={experience.companyImage.asset.url}
       />
       <div className="px-0 md:px-10">
