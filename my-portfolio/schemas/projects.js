@@ -34,7 +34,7 @@ export default {
       ],
     },
     {
-      name: 'linlToBuild',
+      name: 'linkToBuild',
       title: 'LinkToBuild',
       type: 'url',
     },

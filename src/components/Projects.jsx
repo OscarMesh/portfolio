@@ -1,8 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import sanityClient from "../client.js";
 
 const Projects = () => {
-  const projects = [1, 2, 3, 4, 5];
+  // const projects = [1, 2, 3, 4, 5];
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    sanityClient
+      .fetch(
+        ` *[_type == "project"]{
+        ...,
+        image {
+          asset -> {
+            _id,
+            url
+          }
+        },
+           technologies[] ->
+           {
+             image{
+              asset -> {
+                       _id,
+                       url
+                     },
+                     alt
+                   }
+           }
+      }`
+      )
+      .then((data) => setProjects(data))
+      .catch(console.error);
+  }, [sanityClient, setProjects]);
+
   return (
     <div className="h-screen relative flex overflow-hidden flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0">
       <h3 className="absolute top-20 text-center uppercase tracking-[20px]  text-gray-500 text-2xl">
@@ -34,7 +64,7 @@ const Projects = () => {
                 viewport={{
                   once: true,
                 }}
-                src="https://drive.google.com/uc?id=1K8ryHqQHyccENdgl_VCSCtX1Y4g_2Gfp"
+                src={project?.image?.asset.url}
                 alt=""
                 className="w-56 h-56 object-cover rounded-md md:w-60 md:h-60 xl:w-80 xl:h-80"
               />
@@ -43,21 +73,35 @@ const Projects = () => {
                   <span className="underline decoration-[#898989]">
                     Case Study {i + 1} of {projects.length}:
                   </span>{" "}
-                  Tiquette
+                  {project.title}
                 </h4>
+                <div className="flex items-center justify-center">
+                  {project.technologies.map((technology) => (
+                    <>
+                      <img
+                        className="h-10 w-10 rounded-full"
+                        src={technology.image.asset.url}
+                        alt=""
+                        key={technology.image.asset._id}
+                      />
+                    </>
+                  ))}
+                </div>
+                <a
+                  href={project.linkToBuild}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="cursor-pointer text-center flex items-center justify-center hover:underline "
+                >
+                  Link to Build
+                </a>
                 <p className="text-base text-center md:text-left">
-                  Tiquette is a web application that allows you to create
-                  tickets, assign them to users, and track their progress. It
-                  was created using React and Node.js, and it uses MongoDB as a
-                  database.
+                  {project.summary}
                 </p>
               </div>
             </div>
           );
         })}
-        {/* projects */}
-        {/* projects */}
-        {/* projects */}
       </div>
       <div className="w-full absolute top-[30] bg-[#898989]/10 left-0 h-[400px] -skew-y-12 "></div>
     </div>
