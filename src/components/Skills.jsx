@@ -52,7 +52,7 @@ const Skills = () => {
           <Skill key={skill._id} skill={skill} />
         ))}
         {skills?.slice(skills.length / 2, skills.length).map((skill) => (
-          <Skill key={skill._id} skill={skill} directionLeft={directionLeft} />
+          <Skill key={skill._id} skill={skill} />
         ))}
       </div>
     </motion.div>
