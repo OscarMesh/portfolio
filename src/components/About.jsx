@@ -60,7 +60,7 @@ const About = () => {
           <span className="underline decoration-[#898989]/58">little </span>
           backround
         </h4>
-        <p className="text-[16px] md:text-base ">
+        <p className="text-[14px] md:text-base text-justify ">
           {pageInfo[0]?.backgroundInformation}
         </p>
       </div>
