@@ -9,7 +9,7 @@ import Skills from "./components/Skills";
 function App() {
   return (
     <div
-      className="App bg-[rgb(41,41,41)] text-white h-screen snap-y snap-mandatory overflow-scroll z-0
+      className="App bg-[rgb(41,41,41)] text-white h-screen snap-y snap-mandatory overflow-hidden md:overflow-scroll z-0
     scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#898989]/80
     "
     >

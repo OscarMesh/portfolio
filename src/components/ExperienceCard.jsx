@@ -40,7 +40,7 @@ const ExperienceCard = ({ experience }) => {
             live
           </a> */}
         </p>
-        <div className="grid grid-cols-3  gap-2 md:flex md:space-x-2 my-2">
+        <div className="grid grid-cols-3 gap-1 md:flex space-x-1 md:space-x-2 my-2">
           {experience.technologies.map((technology) => (
             <img
               className="h-10 w-10 rounded-full"
