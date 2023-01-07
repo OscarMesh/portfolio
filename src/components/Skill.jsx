@@ -6,16 +6,17 @@ const Skill = ({ skill, directionLeft }) => {
     <div className="group relative flex cursor-pointer">
       <motion.img
         initial={{
-          x: directionLeft ? -200 : 200,
+          y: -100,
           opacity: 0,
         }}
         transition={{
           duration: 1,
         }}
         whileInView={{
-          x: 0,
+          y: 0,
           opacity: 1,
         }}
+        
         src={skill.image.asset.url}
         className="rounded-full border border-gray-500 object-cover w-16 h-16 xl:w-20
         xl:h-20 filter group-hover:grayscale transition duration-300 ease-in-out"
