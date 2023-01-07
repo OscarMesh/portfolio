@@ -1,12 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
+import sanityClient from "../client.js";
 
 const Hero = () => {
-  const [text, count] = useTypewriter({
+  const [pageInfo, setPageInfo] = useState([]);
+
+  useEffect(() => {
+    sanityClient
+      .fetch(
+        ` *[_type == "pageInfo"]{
+        ...,
+        heroImage{
+          asset -> {
+                 _id,
+                 url
+               },
+               alt
+             }
+      } `
+      )
+      .then((data) => setPageInfo(data))
+      .catch(console.error);
+  }, []);
+
+  const [text] = useTypewriter({
     words: [
       "Hi there!",
-      "I'm Oscar",
+      `I'm ${pageInfo[0]?.name}`,
       "Guy-who-loves-movies",
       "<ButLovesToCode/>",
     ],
@@ -22,12 +43,12 @@ const Hero = () => {
       <BackgroundCircles />
       <img
         className="relative rounded-full h-32 w-32 mx-auto object-cover"
-        src="https://avatars.githubusercontent.com/u/93758969?v=4"
-        alt=""
+        src={pageInfo[0]?.heroImage?.asset.url}
+        alt={pageInfo.heroImage?.alt}
       />
       <div className="z-20">
         <h2 className="text-[12px] md:text-sm uppercase text-gray-500 pb-2 tracking-[10px] md:tracking-[15px]">
-          Software Engineer
+          {pageInfo[0]?.role}
         </h2>
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold scroll-px-10 ">
           <span className="mr-3">{text}</span>

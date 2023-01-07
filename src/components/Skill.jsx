@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 const Skill = (props) => {
-  const [directionLeft, setDirectionLeft] = useState(true);
+  const [directionLeft] = useState(true);
   return (
     <div className="group relative flex cursor-pointer">
       <motion.img

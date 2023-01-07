@@ -36,7 +36,7 @@ const Projects = () => {
                 }}
                 src="https://drive.google.com/uc?id=1K8ryHqQHyccENdgl_VCSCtX1Y4g_2Gfp"
                 alt=""
-                className="w-56 h-56 object-cover md:w-60 md:h-60 xl:w-80 xl:h-80"
+                className="w-56 h-56 object-cover rounded-md md:w-60 md:h-60 xl:w-80 xl:h-80"
               />
               <div className="space-y-3 px-0 md:px-5 max-w-6xl">
                 <h4 className="text-2xl font-semibold text-center">

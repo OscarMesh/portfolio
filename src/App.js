@@ -8,7 +8,11 @@ import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 function App() {
   return (
-    <div className="App bg-[rgb(41,41,41)] text-white h-screen snap-y snap-mandatory overflow-scroll z-0">
+    <div
+      className="App bg-[rgb(41,41,41)] text-white h-screen snap-y snap-mandatory overflow-scroll z-0
+    scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#898989]/80
+    "
+    >
       <head>
         <title>Oscar's Portfolio</title>
       </head>
@@ -37,6 +41,18 @@ function App() {
       <section id="contact" className="snap-start">
         <ContactMe />
       </section>
+
+      <a href="#hero">
+        <footer className="sticky bottom-1  md:bottom-5 w-full cursor-pointer">
+          <div className="flex items-center justify-center">
+            <img
+              className="w-7 h-7 md:w-10 md:h-10 rounded-full filter grayscale hover:grayscale-0"
+              src="https://avatars.githubusercontent.com/u/93758969?v=4"
+              alt=""
+            />
+          </div>
+        </footer>
+      </a>
     </div>
   );
 }

@@ -3,13 +3,7 @@ import { useForm } from "react-hook-form";
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 
 const ContactMe = () => {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const { register, handleSubmit } = useForm();
   return (
     <div
       className="h-screen relative flex flex-col text-center md:text-left md:flex-row
@@ -30,7 +24,9 @@ const ContactMe = () => {
           </div>
           <div className="flex items-center space-x-3 justify-center">
             <EnvelopeIcon className="text-[#898989] h-7 w-7 animate-pulse" />
-            <p className="text-[20px] md:text-2xl">okerekeifeany65@gmail.com</p>
+            <p className="text-[20px] md:text-2xl">
+              okerekeifeanyi65@gmail.com
+            </p>
           </div>
           <div className="flex items-center space-x-3 justify-center">
             <MapPinIcon className="text-[#898989] h-7 w-7 animate-pulse" />
@@ -42,19 +38,19 @@ const ContactMe = () => {
           onSubmit={handleSubmit((data) => {
             window.location.href = `mailto:okerekeifeanyi65@gmail.com?subject=${data.subject}&body=Hi, my name is ${data.name}. ${data.Message}(${data.email})`;
           })}
-          className="flex flex-col space-y-1 md:space-y-2 w-[380px]  md:w-fit mx-auto"
+          className="flex flex-col space-y-1 md:space-y-2 max-w-[350px]  md:w-fit mx-auto"
         >
           <div className="flex space-x-1 md:space-x-2">
             <input
               {...register("name")}
               placeholder="Name"
-              className="contactInput w-[160px] md:w-auto"
+              className="contactInput max-w-[140px] md:w-auto"
               type="text"
             />
             <input
               {...register("email")}
               placeholder="Email"
-              className="contactInput"
+              className="contactInput max-w-[200px] md:w-auto"
               type="email"
             />
           </div>

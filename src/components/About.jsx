@@ -1,7 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-
+import sanityClient from "../client.js";
 const About = () => {
+  const [pageInfo, setPageInfo] = useState([]);
+  useEffect(() => {
+    sanityClient
+      .fetch(
+        ` *[_type == "pageInfo"]{
+        ...,
+        profilePic{
+          asset -> {
+                 _id,
+                 url
+               },
+               alt
+             }
+      } `
+      )
+      .then((data) => setPageInfo(data))
+      .catch(console.error);
+  }, []);
   return (
     <motion.div
       initial={{
@@ -33,7 +51,7 @@ const About = () => {
         viewport={{
           once: true,
         }}
-        src="https://drive.google.com/uc?id=1EDZ_88iqEIAPmY7qUWzpZFUgUPLiwgYp"
+        src={pageInfo[0]?.profilePic.asset.url}
         className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[500px] mt-28 md:mt-0 xl:mt-20"
       />
       <div className="space-y-4 px-0 md:px-10 mt-16 md:mt-0">
@@ -43,14 +61,7 @@ const About = () => {
           backround
         </h4>
         <p className="text-[16px] md:text-base ">
-          Hello, my name is <span className="font-semibold">Oscar</span>, I am a
-          self-taught web developer, I have been learning web development for 2
-          years, I have worked eith tools such as HTML, CSS, JavaScript, React,
-          Vue Js Next.js, Tailwind CSS, Framer Motion, Node.js, Express.js,
-          MongoDB, and Firebase. I have also worked with some other technologies
-          like Git, Github, Netlify, Vercel, Heroku, and Figma. I have also used
-          some other technologies like Git, Github, Netlify, Vercel, Heroku, and
-          Figma.
+          {pageInfo[0]?.backgroundInformation}
         </p>
       </div>
     </motion.div>
