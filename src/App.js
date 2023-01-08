@@ -43,10 +43,10 @@ function App() {
       </section>
 
       <a href="#hero">
-        <footer className="sticky bottom-3 md:bottom-5 w-full cursor-pointer">
+        <footer className="sticky bottom-5 w-full cursor-pointer">
           <div className="flex items-center justify-center">
             <img
-              className="w-7 h-7 md:w-10 md:h-10 rounded-full filter grayscale hover:grayscale-0"
+              className="w-5 h-5 md:w-10 md:h-10 rounded-full filter grayscale hover:grayscale-0"
               src="https://avatars.githubusercontent.com/u/93758969?v=4"
               alt=""
             />
