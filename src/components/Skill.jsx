@@ -27,7 +27,7 @@ const Skill = ({ skill, directionLeft }) => {
       >
         <div className="flex items-center justify-center h-full">
           <p className="text-[18px] font-bold text-black justify-center opacity-100">
-            {skill.progress}
+            {skill.progress}%
           </p>
         </div>
       </div>

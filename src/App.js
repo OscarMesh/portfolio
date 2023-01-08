@@ -10,7 +10,7 @@ function App() {
   return (
     <div
       className="App bg-[rgb(41,41,41)] text-white h-screen snap-y snap-mandatory overflow-hidden md:overflow-scroll z-0
-    scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#898989]/80
+    scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#898989]/80 body-font font-Urbanist
     "
     >
       <head>

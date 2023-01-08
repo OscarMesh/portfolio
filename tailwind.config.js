@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {},
+    fontFamily: {
+      sans: ["Urbanist", "sans-serif"],
+    },
   },
   plugins: [require("tailwind-scrollbar")],
 };
