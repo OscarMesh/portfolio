@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 const ExperienceCard = ({ experience }) => {
   return (
     <article
-      className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0
-    w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#464545] p-10 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200
+      className="flex flex-col rounded-lg items-center space-y-5 flex-shrink-0
+    w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#464545] p-5 md:p-10 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200
     overflow-hidden"
     >
       <motion.img
@@ -58,7 +58,7 @@ const ExperienceCard = ({ experience }) => {
           : new Date(experience.dateEnded).toDateString()}
       </p>
       <ul
-        className="list-disc space-y-2 ml-3 text-[14px] md:text-lg w-[300px] md:w-auto px-5 overflow-y-scroll md:overflow-hidden  
+        className="list-disc space-y-2 ml-3 text-[14px] md:text-lg w-[250px] md:w-auto px-5 overflow-y-scroll md:overflow-hidden  
       scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#898989]/80 "
       >
         {experience.points.map((point, i) => (

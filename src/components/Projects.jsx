@@ -46,7 +46,7 @@ const Projects = () => {
         {projects.map((project, i) => {
           return (
             <div
-              className="w-screen mt-10 flex-shrink-0 snap-center flex flex-col space-y-5
+              className="w-screen mt-8 md:mt-10 flex-shrink-0 snap-center flex flex-col space-y-5
             items-center justify-center p-10 md:p-33 h-screen"
             >
               <motion.img
@@ -66,7 +66,7 @@ const Projects = () => {
                 }}
                 src={project?.image?.asset.url}
                 alt=""
-                className="w-56 h-56 object-cover rounded-md md:w-60 md:h-60 xl:w-80 xl:h-80"
+                className="w-52 h-52 object-cover rounded-md md:w-60 md:h-60 xl:w-80 xl:h-80"
               />
               <div className="space-y-3 px-0 md:px-5 max-w-6xl">
                 <h4 className="text-2xl font-semibold text-center">
