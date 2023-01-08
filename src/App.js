@@ -43,7 +43,7 @@ function App() {
       </section>
 
       <a href="#hero">
-        <footer className="sticky bottom-1  md:bottom-5 w-full cursor-pointer">
+        <footer className="sticky bottom-3 md:bottom-5 w-full cursor-pointer">
           <div className="flex items-center justify-center">
             <img
               className="w-7 h-7 md:w-10 md:h-10 rounded-full filter grayscale hover:grayscale-0"

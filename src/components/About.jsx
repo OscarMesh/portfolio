@@ -54,8 +54,8 @@ const About = () => {
         src={pageInfo[0]?.profilePic.asset.url}
         className="-mb-20 md:mb-0 flex-shrink-0 w-48 h-48 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[500px] mt-28 md:mt-0 xl:mt-20"
       />
-      <div className="space-y-4 px-0 md:px-10 mt-10 md:mt-0">
-        <h4 className="text-2xl mt-4 md:mt-auto md:text-4xl font-semibold">
+      <div className="space-y-4 px-0 md:px-10 mt-5 md:mt-0">
+        <h4 className="text-2xl md:text-4xl font-semibold">
           Here is a{" "}
           <span className="underline decoration-[#898989]/58">little </span>
           backround
