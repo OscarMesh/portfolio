@@ -40,8 +40,8 @@ const Projects = () => {
       </h3>
 
       <div
-        className="relative w-full flex overflow-hidden overflow-y-hidden snap-x
-      snap-mandatory z-10"
+        className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x
+      snap-mandatory z-10 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#898989]/80"
       >
         {projects.map((project, i) => {
           return (
@@ -75,7 +75,7 @@ const Projects = () => {
                   </span>{" "}
                   {project.title}
                 </h4>
-                <div className="flex items-center justify-center">
+                <div className="flex items-center space-x-2 justify-center">
                   {project.technologies.map((technology) => (
                     <>
                       <img

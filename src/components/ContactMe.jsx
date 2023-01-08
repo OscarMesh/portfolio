@@ -13,24 +13,24 @@ const ContactMe = () => {
         Contact
       </h3>
       <div className="flex flex-col space-y-5 mt-20">
-        <h4 className="text-[20px] md:text-2xl font-semibold text-center">
+        <h4 className="text-[18px] md:text-2xl font-semibold text-center">
           Let me work for you, contact me <br />
           <span className="decoration-[#898989]/50 underline">Let's talk.</span>
         </h4>
         <div className="space-y-5">
           <div className="flex items-center space-x-3 justify-center">
-            <PhoneIcon className="text-[#898989] h-7 w-7 animate-pulse" />
-            <p className="text-[20px] md:text-2xl">+234 916 322 6590</p>
+            <PhoneIcon className="text-[#898989] h-6 w-6 animate-pulse" />
+            <p className="text-[16px] md:text-2xl">+234 916 322 6590</p>
           </div>
           <div className="flex items-center space-x-3 justify-center">
-            <EnvelopeIcon className="text-[#898989] h-7 w-7 animate-pulse" />
-            <p className="text-[20px] md:text-2xl">
+            <EnvelopeIcon className="text-[#898989] h-6 w-6 animate-pulse" />
+            <p className="text-[16px] md:text-2xl">
               okerekeifeanyi65@gmail.com
             </p>
           </div>
           <div className="flex items-center space-x-3 justify-center">
-            <MapPinIcon className="text-[#898989] h-7 w-7 animate-pulse" />
-            <p className="text-[20px] md:text-2xl">Lagos, Nigeria</p>
+            <MapPinIcon className="text-[#898989] h-6 w-6 animate-pulse" />
+            <p className="text-[16px] md:text-2xl">Lagos, Nigeria</p>
           </div>{" "}
         </div>
 
